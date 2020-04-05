@@ -1,0 +1,17 @@
+/* add some basic style here */
+body {
+    font-size: 16px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+main p{
+    line-height: 1.5;
+}
+
+img{
+    max-height: 400px;
+}
+
+.personality{
+    color: rgb(204,153,255);
+}

@@ -1,0 +1,150 @@
+ FAIL  problem-a/problem.spec.js
+  Used test-driven development
+    ✕ Used Jest to pre-test code, saved in `pretest.txt` (5ms)
+  Source code is valid
+    ✓ HTML validates without errors (9ms)
+    ✓ CSS validates without errors (380ms)
+  Has required HTML
+    ✓ Specifies charset (3ms)
+    ✓ Includes page title (1ms)
+    ✓ Includes author metadata (1ms)
+    ✓ Has a top-level heading
+    ✓ Has an image (1ms)
+    ✓ Includes a paragraph
+    ✓ Includes a hyperlink in the paragraph (1ms)
+    ✓ Includes a list (1ms)
+    ✓ List has at least 3 items (1ms)
+  Has required CSS
+    ✓ Links in local stylesheet
+    ✓ Body has default font size (1ms)
+    ✓ Body has default font family
+    ✓ Paragraphs have specified line height (1ms)
+    ✓ Images have constrained height (1ms)
+    ✓ Important list item is colored
+
+  ● Used test-driven development › Used Jest to pre-test code, saved in `pretest.txt`
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /Tests: +17 failed, 1 passed, 18 total/
+    Received string:  " FAIL  problem-a/problem.spec.js
+      Used test-driven development
+        ✕ Used Jest to pre-test code, saved in `pretest.txt` (3ms)
+      Source code is valid
+        ✓ HTML validates without errors (12ms)
+        ✕ CSS validates without errors (374ms)
+      Has required HTML
+        ✓ Specifies charset (4ms)
+        ✓ Includes page title (1ms)
+        ✓ Includes author metadata (1ms)
+        ✓ Has a top-level heading (1ms)
+        ✓ Has an image
+        ✓ Includes a paragraph (1ms)
+        ✓ Includes a hyperlink in the paragraph
+        ✓ Includes a list (1ms)
+        ✓ List has at least 3 items (1ms)
+      Has required CSS
+        ✓ Links in local stylesheet (1ms)
+        ✕ Body has default font size (2ms)
+        ✕ Body has default font family (1ms)
+        ✕ Paragraphs have specified line height (1ms)
+        ✕ Images have constrained height (1ms)
+        ✕ Important list item is colored (1ms)·
+      ● Used test-driven development › Used Jest to pre-test code, saved in `pretest.txt`·
+        ENOENT: no such file or directory, open '/Users/jisukim/Desktop/problem-01-anie0521/problem-a/pretest.txt'·
+          16 |   test('Used Jest to pre-test code, saved in `pretest.txt`', () => {
+          17 |     const path = __dirname + '/pretest.txt'
+        > 18 |     const pretest = fs.readFileSync(path, 'utf-8');
+             |                        ^
+          19 |     expect(pretest).toMatch(/Tests: +17 failed, 1 passed, 18 total/)
+          20 |   })
+          21 | })·
+          at Object.<anonymous> (problem-a/problem.spec.js:18:24)·
+      ● Source code is valid › CSS validates without errors·
+        error: Unexpected empty source (no-empty-source)
+               At line 1, column 1.·
+          41 |·
+          42 |   test('CSS validates without errors', async () => {
+        > 43 |     await expect('problem-a/css/*.css').toHaveNoCssLintErrorsAsync();
+             |                                         ^
+          44 |   })
+          45 | });
+          46 |··
+          at Object.<anonymous> (problem-a/problem.spec.js:43:41)·
+      ● Has required CSS › Body has default font size·
+        expect(received).toEqual(expected) // deep equality·
+        Expected: \"16px\"
+        Received: undefined·
+          124 |·
+          125 |   test('Body has default font size', () => {
+        > 126 |     expect( $('body').css('font-size') ).toEqual('16px');
+              |                                          ^
+          127 |   })
+          128 |·
+          129 |   test('Body has default font family', () => {·
+          at Object.<anonymous> (problem-a/problem.spec.js:126:42)·
+      ● Has required CSS › Body has default font family·
+        TypeError: Cannot read property 'replace' of undefined·
+          128 |·
+          129 |   test('Body has default font family', () => {
+        > 130 |     let fontFamilySingleQuotes = ($('body').css('font-family')).replace(/\"/g, '\\'');
+              |                                  ^
+          131 |     expect(fontFamilySingleQuotes).toMatch(/'Helvetica Neue', *'?Helvetica'?, *'?Arial'?, *sans-serif/);
+          132 |   })
+          133 |··
+          at Object.<anonymous> (problem-a/problem.spec.js:130:34)·
+      ● Has required CSS › Paragraphs have specified line height·
+        expect(received).toEqual(expected) // deep equality·
+        Expected: \"1.5\"
+        Received: undefined·
+          134 |   test('Paragraphs have specified line height', () => {
+          135 |     let p = $('p')
+        > 136 |     expect(p.css('line-height') ).toEqual('1.5');
+              |                                   ^
+          137 |     expect(p.attr('id')).toBe(undefined); //shouldn't have id
+          138 |     expect(p.attr('class')).toBe(undefined); //shouldn't have class
+          139 |   })·
+          at Object.<anonymous> (problem-a/problem.spec.js:136:35)·
+      ● Has required CSS › Images have constrained height·
+        expect(received).toEqual(expected) // deep equality·
+        Expected: \"400px\"
+        Received: undefined·
+          140 |·
+          141 |   test('Images have constrained height', () => {
+        > 142 |     expect($('img').css('max-height')).toEqual('400px');
+              |                                        ^
+          143 |   })
+          144 |·
+          145 |   test('Important list item is colored', () => {·
+          at Object.<anonymous> (problem-a/problem.spec.js:142:40)·
+      ● Has required CSS › Important list item is colored·
+        expect(received).toBeDefined()·
+        Received: undefined·
+          146 |     let li = $('li[class]')
+          147 |     expect(li.length).toBe(1); //only one item has class
+        > 148 |     expect(li.css('color')).toBeDefined(); //that item has a color
+              |                             ^
+          149 |   });
+          150 | })
+          151 |··
+          at Object.<anonymous> (problem-a/problem.spec.js:148:29)·
+    Test Suites: 1 failed, 1 total
+    Tests:       7 failed, 11 passed, 18 total
+    Snapshots:   0 total
+    Time:        5.808s
+    "
+
+      17 |     const path = __dirname + '/pretest.txt'
+      18 |     const pretest = fs.readFileSync(path, 'utf-8');
+    > 19 |     expect(pretest).toMatch(/Tests: +17 failed, 1 passed, 18 total/)
+         |                     ^
+      20 |   })
+      21 | })
+      22 | 
+
+      at Object.<anonymous> (problem-a/problem.spec.js:19:21)
+
+Test Suites: 1 failed, 1 total
+Tests:      17 failed, 1 passed, 18 total
+Snapshots:   0 total
+Time:        6.047s
