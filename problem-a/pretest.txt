@@ -1,0 +1,42 @@
+ FAIL  problem-a/problem.spec.js
+  Used test-driven development
+    ✕ Used Jest to pre-test code, saved in `pretest.txt` (3ms)
+  Source code is valid
+    ✓ HTML validates without errors (14ms)
+    ✓ CSS validates without errors (375ms)
+  Has required HTML
+    ✓ Specifies charset (5ms)
+    ✓ Includes page title (2ms)
+    ✓ Includes author metadata (1ms)
+    ✓ Has a top-level heading (1ms)
+    ✓ Has an image (1ms)
+    ✓ Includes a paragraph
+    ✓ Includes a hyperlink in the paragraph (1ms)
+    ✓ Includes a list
+    ✓ List has at least 3 items (2ms)
+  Has required CSS
+    ✓ Links in local stylesheet
+    ✓ Body has default font size (1ms)
+    ✓ Body has default font family
+    ✓ Paragraphs have specified line height (1ms)
+    ✓ Images have constrained height (1ms)
+    ✓ Important list item is colored
+
+  ● Used test-driven development › Used Jest to pre-test code, saved in `pretest.txt`
+
+    ENOENT: no such file or directory, open '/Users/jisukim/Desktop/problem-01-anie0521/problem-a/pretest.txt'
+
+      16 |   test('Used Jest to pre-test code, saved in `pretest.txt`', () => {
+      17 |     const path = __dirname + '/pretest.txt'
+    > 18 |     const pretest = fs.readFileSync(path, 'utf-8');
+         |                        ^
+      19 |     expect(pretest).toMatch(/Tests: +17 failed, 1 passed, 18 total/)
+      20 |   })
+      21 | })
+
+      at Object.<anonymous> (problem-a/problem.spec.js:18:24)
+
+Test Suites: 1 failed, 1 total
+Tests:       17 failed, 1 passed, 18 total
+Snapshots:   0 total
+Time:        5.845s
